@@ -6,11 +6,12 @@ using Random = UnityEngine.Random;
 public class Unit : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 5;
+    [SerializeField] private int _health = 10;
     [SerializeField] private float _attackDistance = 1;
+    [SerializeField] private int _damage = 1;
 
     private UnitManager _unitManager;
     
-    private int _health = 10;
     private int _team = 0;
 
     public int team => _team;
@@ -24,18 +25,19 @@ public class Unit : MonoBehaviour
         _team = team;
     }
 
-    public void Damage()
+    public void Damage(int damage)
     {
-        _health--;
+        _health -= damage;
         Floor.instance.AddBloodSplat(Vector2Int.RoundToInt(position));
-        Floor.instance.AddBloodSplat(Vector2Int.RoundToInt(position) + Vector2Int.up);
-        Floor.instance.AddBloodSplat(Vector2Int.RoundToInt(position) + Vector2Int.down);
-        Floor.instance.AddBloodSplat(Vector2Int.RoundToInt(position) + Vector2Int.left);
-        Floor.instance.AddBloodSplat(Vector2Int.RoundToInt(position) + Vector2Int.right);
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < damage; i++)
         {
             Floor.instance.AddBloodSplat(Vector2Int.RoundToInt(position) + new Vector2Int(Random.Range(-5, 5), Random.Range(-5, 5)));
+        }
+
+        if (isDead)
+        {
+            _unitManager.UnitDead(this);
         }
     }
 
@@ -61,7 +63,7 @@ public class Unit : MonoBehaviour
 
         if (distanceToTarget <= _attackDistance)
         {
-            _currentTarget.Damage();
+            _currentTarget.Damage(_damage);
         }
         else
         {

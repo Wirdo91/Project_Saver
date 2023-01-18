@@ -12,11 +12,12 @@ namespace DefaultNamespace
 
 		private Dictionary<int, List<Unit>> _activeUnits = new Dictionary<int, List<Unit>>();
 
-		private int[] _teams = new[] {0, Screen.width};
 		
 		private void Start()
 		{
-			float spacing = (float)Screen.height / _teamSize;
+			int[] _teams = new[] { 0, (int)(Screen.width * Settings.scale) };
+			
+			float spacing = (Screen.height * Settings.scale) / _teamSize;
 
 			int team = 0;
 			foreach (var startX in _teams)

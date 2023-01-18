@@ -20,12 +20,15 @@ public class Floor : MonoBehaviour
     {
         _floorMesh = new Mesh();
 
+        int width = (int)(Screen.width * Settings.scale);
+        int height = (int)(Screen.height * Settings.scale);
+
         _floorMesh.vertices = new[]
         {
             Vector3.zero, 
-            new Vector3(Screen.width, 0),
-            new Vector3(Screen.width, Screen.height),
-            new Vector3(0, Screen.height)
+            new Vector3(width, 0),
+            new Vector3(width, height),
+            new Vector3(0, height)
         };
         _floorMesh.triangles = new[]
         {
@@ -49,11 +52,11 @@ public class Floor : MonoBehaviour
         
         GetComponent<MeshFilter>().mesh = _floorMesh;
         
-        _floorTexture = new Texture2D(Screen.width, Screen.height);
+        _floorTexture = new Texture2D(width, height);
 
-        for (int x = 0; x < Screen.width; x++)
+        for (int x = 0; x < width; x++)
         {
-            for (int y = 0; y < Screen.height; y++)
+            for (int y = 0; y < height; y++)
             {
                 _floorTexture.SetPixel(x,y,Color.white);
             }
