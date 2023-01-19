@@ -8,11 +8,13 @@ public class Unit : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5;
     [SerializeField] private int _health = 10;
     [SerializeField] private float _attackDistance = 1;
+    [SerializeField] private float _attacksSpeed = 0.5f;
     [SerializeField] private int _damage = 1;
 
     private UnitManager _unitManager;
     
     private int _team = 0;
+    private float _attackTimer = 0;
 
     public int team => _team;
     public bool isDead => _health <= 0;
@@ -63,16 +65,32 @@ public class Unit : MonoBehaviour
 
         if (distanceToTarget <= _attackDistance)
         {
-            _currentTarget.Damage(_damage);
+            Attack();
         }
         else
         {
-            float moveDistance = _moveSpeed;
+            Move();
+        }
+
+        void Attack()
+        {
+            if (_attackTimer <= 0)
+            {
+                _currentTarget.Damage(_damage);
+                _attackTimer = _attacksSpeed;
+            }
+
+            _attackTimer -= Time.deltaTime;
+        }
+
+        void Move()
+        {
+            float moveDistance = _moveSpeed * Time.deltaTime;
             
             Vector2 direction = _currentTarget.position - position;
             direction.Normalize();
             
-            if (distanceToTarget < _moveSpeed)
+            if (distanceToTarget - _attackDistance < moveDistance)
             {
                 moveDistance = distanceToTarget - _attackDistance;
             }

@@ -20,8 +20,8 @@ public class Floor : MonoBehaviour
     {
         _floorMesh = new Mesh();
 
-        int width = (int)(Screen.width * Settings.scale);
-        int height = (int)(Screen.height * Settings.scale);
+        int width = (int)(Screen.width / Settings.zoom);
+        int height = (int)(Screen.height / Settings.zoom);
 
         _floorMesh.vertices = new[]
         {

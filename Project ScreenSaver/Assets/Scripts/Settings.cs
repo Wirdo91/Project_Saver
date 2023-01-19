@@ -1,4 +1,4 @@
 ﻿public static class Settings
 {
-   public static float scale = 0.1f;
+   public static float zoom = 25f;
 }

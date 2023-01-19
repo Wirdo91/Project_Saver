@@ -15,9 +15,9 @@ namespace DefaultNamespace
 		
 		private void Start()
 		{
-			int[] _teams = new[] { 0, (int)(Screen.width * Settings.scale) };
+			int[] _teams = new[] { 0, (int)(Screen.width / Settings.zoom) };
 			
-			float spacing = (Screen.height * Settings.scale) / _teamSize;
+			float spacing = (Screen.height / Settings.zoom) / _teamSize;
 
 			int team = 0;
 			foreach (var startX in _teams)

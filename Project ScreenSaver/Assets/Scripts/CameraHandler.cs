@@ -13,7 +13,7 @@ public class CameraHandler : MonoBehaviour
 
     void Start()
     {
-        _camera.orthographicSize = 540 * Settings.scale;
-        transform.position = new Vector3((Screen.width * Settings.scale) / 2f, (Screen.height * Settings.scale) / 2f, -10);
+        _camera.orthographicSize = 540 / Settings.zoom;
+        transform.position = new Vector3((Screen.width / Settings.zoom) / 2f, (Screen.height / Settings.zoom) / 2f, -10);
     }
 }
