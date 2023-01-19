@@ -3,12 +3,14 @@ namespace DefaultNamespace
 	using System;
 	using System.Collections.Generic;
 	using UnityEngine;
+	using Weapons;
 
 	public class UnitManager : MonoBehaviour
 	{
 		[SerializeField] private Unit _unitPrefab;
 
 		[SerializeField] private int _teamSize = 500;
+		[SerializeField] private List<WeaponBase> _weapons;
 
 		private Dictionary<int, List<Unit>> _activeUnits = new Dictionary<int, List<Unit>>();
 
@@ -27,7 +29,8 @@ namespace DefaultNamespace
 				for (int i = 0; i < _teamSize; i++)
 				{
 					var unit = Instantiate(_unitPrefab, transform);
-					unit.Setup(this, team);
+					var weapon = Instantiate(_weapons.GetRandomElement(), unit.transform);
+					unit.Setup(this, team, weapon);
 					_activeUnits[team].Add(unit);
 					unit.transform.position = new Vector3(startX, y);
 					y += spacing;

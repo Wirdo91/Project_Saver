@@ -263,6 +263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitPrefab: {fileID: -1622367708541281745, guid: 43b1aeba8e763a542a5cad595980f8a5, type: 3}
   _teamSize: 500
+  _weapons:
+  - {fileID: 6865160112619034375, guid: 7f872ae9bc9ceaa4487f2446a9490835, type: 3}
+  - {fileID: 421355319650953036, guid: 8d821025ea9ac0e459cf23254af49b78, type: 3}
 --- !u!4 &1529782681
 Transform:
   m_ObjectHideFlags: 0

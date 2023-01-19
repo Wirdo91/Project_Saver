@@ -4,6 +4,6 @@
 
     public interface IDamageDealing
     {
-        float damage { get; }
+        int damage { get; }
     }
 }

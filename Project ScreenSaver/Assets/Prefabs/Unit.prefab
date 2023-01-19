@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5243769111502232879}
   - component: {fileID: -1622367708541281745}
+  - component: {fileID: 8054657804017122495}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -127,6 +128,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 5
   _health: 10
-  _attackDistance: 1
-  _attacksSpeed: 0.5
-  _damage: 1
+  _model: {fileID: 5243769110353404234}
+  _collider: {fileID: 8054657804017122495}
+--- !u!58 &8054657804017122495
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243769111502232876}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
