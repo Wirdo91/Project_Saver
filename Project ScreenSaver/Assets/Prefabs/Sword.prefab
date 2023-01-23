@@ -49,7 +49,7 @@ MonoBehaviour:
   _minAccuracy: 0
   _maxRange: 1
   _optimalRange: 1
-  _damage: 1
+  _damage: 10
 --- !u!1 &8569868729647663244
 GameObject:
   m_ObjectHideFlags: 0

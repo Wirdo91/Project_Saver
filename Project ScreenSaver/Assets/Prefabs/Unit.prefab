@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
-  _health: 10
+  _health: 100
   _model: {fileID: 5243769110353404234}
   _collider: {fileID: 8054657804017122495}
 --- !u!58 &8054657804017122495

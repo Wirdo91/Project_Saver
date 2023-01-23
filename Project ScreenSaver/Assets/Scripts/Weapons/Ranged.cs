@@ -21,7 +21,7 @@
             var direction = target.position - attacker.position;
             direction.Normalize();
 
-            direction = Quaternion.Euler(0, 0, actualSway) * direction;
+            direction = Quaternion.Euler(0, 0, Random.value * actualSway) * direction;
             
             var projectileInstance = Instantiate(projectile);
             projectileInstance.Shoot(attacker, direction);

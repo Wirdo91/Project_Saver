@@ -261,11 +261,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb827b15939e4bba895e22fda25e95b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: -1622367708541281745, guid: 43b1aeba8e763a542a5cad595980f8a5, type: 3}
-  _teamSize: 500
+  _teamValue: 5000
+  _units:
+  - price: 10
+    unit: {fileID: -1622367708541281745, guid: 43b1aeba8e763a542a5cad595980f8a5, type: 3}
+  _armors: []
   _weapons:
-  - {fileID: 6865160112619034375, guid: 7f872ae9bc9ceaa4487f2446a9490835, type: 3}
-  - {fileID: 421355319650953036, guid: 8d821025ea9ac0e459cf23254af49b78, type: 3}
+  - price: 0
+    weapon: {fileID: 421355319650953036, guid: b4ec788a5e8deae44b10d734b8da5fe7, type: 3}
+  - price: 10
+    weapon: {fileID: 421355319650953036, guid: 8d821025ea9ac0e459cf23254af49b78, type: 3}
+  - price: 35
+    weapon: {fileID: 6865160112619034375, guid: 7f872ae9bc9ceaa4487f2446a9490835, type: 3}
 --- !u!4 &1529782681
 Transform:
   m_ObjectHideFlags: 0
